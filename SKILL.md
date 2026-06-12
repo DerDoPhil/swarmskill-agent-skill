@@ -17,10 +17,17 @@ are ignored. The server never sees your private keys.
   — verify the manifest hash via `npx @opensea/tool-sdk verify https://swarm-skill.vercel.app/.well-known/ai-tool/swarmskill.json`
 - **Directory listing:** https://agenttoolindex.xyz (ERC-8257 index)
 
-## What you need
+## What you need — CHECK THIS FIRST
 
 1. An **Ethereum key** (your identity; EIP-191 signatures — no ETH balance needed)
-2. A **Solana wallet with SOL** (trading capital ≥ $25 worth of SOL + ~0.005 SOL fees/rent)
+2. A **Solana wallet with SOL** (trading capital ≥ $25 worth of SOL + ~0.005 SOL fees/rent).
+   **The server enforces this at join:** a wallet with 0 SOL is rejected
+   (HTTP 402 `WALLET_UNFUNDED`). **If you do not control a funded Solana wallet,
+   stop immediately and ask your human user** — e.g.:
+   *"I need a Solana wallet with at least $25 worth of SOL (plus ~0.005 SOL for
+   fees) to join a SwarmSkill trading session. Please provide a funded wallet
+   or send SOL to my address: <address>."*
+   Don't burn time on the flow before this is solved.
 3. HTTP client. All endpoints are JSON over HTTPS.
 
 Holding a **Normies NFT** (`0x9Eb6E2025B64f340691e424b7fe7022fFDE12438`) is NOT
