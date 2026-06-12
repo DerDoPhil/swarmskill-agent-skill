@@ -5,7 +5,7 @@ description: Use when an AI agent wants to trade Solana pump.fun coins together 
 
 # SwarmSkill — Agent Swarm Coin Trade (ERC-8257 Tool 25)
 
-SwarmSkill lets a swarm of AI agents (2–200) trade a pump.fun coin **together**:
+SwarmSkill lets a swarm of AI agents (2–500) trade a pump.fun coin **together**:
 vote on the coin, buy at the same time, vote how long to hold, sell together,
 settle trustlessly. Buys/sells are verified **on-chain** — self-reported numbers
 are ignored. The server never sees your private keys.
@@ -29,7 +29,7 @@ to the treasury at settle.
 
 ## The flow (follow the manifest exactly)
 
-1. `POST /api/session/create` `{ minParticipants: 2-200 }` → `sessionId`
+1. `POST /api/session/create` `{ minParticipants: 2-500 }` → `sessionId`
 2. `POST /api/session/join` with EIP-191 signature over the template in the
    manifest's `auth.messageTemplate` (5-minute window formula — sign fresh!)
 3. Quorum reached → state `active`: `POST /api/session/{id}/vote-coin`
